@@ -1,4 +1,5 @@
 ## Shadowsocks-rust Docker Image by zdevcs
+[![Build shadowsocks-rust](https://github.com/zdevcs/docker-install/actions/workflows/shadowsocks_rust-publish.yml/badge.svg)](https://github.com/zdevcs/docker-install/actions/workflows/shadowsocks_rust-publish.yml)
 
 ![Shadowsocks](https://github.com/teddysun/shadowsocks_install/raw/master/shadowsocks.png)
 
