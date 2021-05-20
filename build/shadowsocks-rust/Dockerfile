@@ -32,7 +32,6 @@ RUN set -ex && \
     apk add --no-cache tzdata rng-tools \
     $(scanelf --needed --nobanner $(which sslocal) $(which ssmanager) $(which ssserver) $(which ssurl) \
     | awk '{ gsub(/,/, "\nso:", $2); print "so:" $2 }' \
-    | xargs -r apk info --installed \
     | sort -u)
 
 WORKDIR /etc/shadowsocks-rust
