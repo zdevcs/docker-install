@@ -48,6 +48,5 @@ jobs:
         run: |
           echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
           docker buildx build \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/test:$(date +%Y%m%d) -t ${{ secrets.DOCKERHUB_USERNAME }}/test \
             -t ${{ secrets.PRIVATEREPOSITORY }}/${IMAGE_NAME}:$(date +%Y%m%d) -t ${{ secrets.PRIVATEREPOSITORY }}/${IMAGE_NAME} \
             . --file Dockerfile --platform linux/amd64,linux/arm64 --push
