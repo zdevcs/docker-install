@@ -46,7 +46,6 @@ jobs:
 
       - name: Build and push image
         run: |
-          echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login --username ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
           docker buildx build \
             -t ${{ secrets.PRIVATEREPOSITORY }}/${IMAGE_NAME}:$(date +%Y%m%d) -t ${{ secrets.PRIVATEREPOSITORY }}/${IMAGE_NAME} \
             . --file Dockerfile --platform linux/amd64,linux/arm64 --push
